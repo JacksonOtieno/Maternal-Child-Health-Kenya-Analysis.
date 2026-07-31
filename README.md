@@ -71,5 +71,28 @@ This is a documented, judgment-based split rather than a distinction confirmed b
 
 ---
 
-## Next steps (Stage 4 onward)
-Exploratory data analysis — trend visualizations per indicator, summary statistics, and cross-indicator comparison — followed by feature engineering, statistical analysis, interpretation, and a final Power BI dashboard.
+## Stage 4: Exploratory Data Analysis
+
+### Summary statistics
+Ran `df_clean.groupby('indicator')['value'].describe()` across all 9 cleaned indicators. Notable observations:
+- **Caesarean section rate** has only 1 data point (8.7%) — unusable for trend analysis, kept only as a limitation note.
+- **Facility births** shows the widest relative spread (40.1%–88.1%), suggesting a dramatic shift rather than gradual change.
+- The anaemia split held up under scrutiny: pregnant women consistently higher than non-pregnant/all women across every summary statistic, reinforcing that the Stage 3 splitting logic was directionally sound.
+
+### Chart 1 — Anaemia prevalence trend (pregnant vs. non-pregnant/all women)
+Reveals a **U-shaped pattern**, not a simple decline:
+- **2000–~2011**: steady improvement for both groups (pregnant women: 45.8% → ~38.9%; non-pregnant/all: 33.7% → ~26.7%)
+- **~2012 onward**: both reverse and worsen again through 2023, with non-pregnant/all women climbing back up more steeply (26.8% → 32.0%) than pregnant women (38.6% → 39.8%)
+- The gap between the two groups stays consistently 10-13 percentage points throughout — a persistent, structural difference in anaemia risk during pregnancy that hasn't closed or widened over time.
+- Timing coincides loosely with COVID-19-era health service disruption, but the reversal starts a few years earlier, so this is noted as a plausible contributing factor, not a proven cause.
+
+### Chart 2 — Maternal health service coverage (antenatal care, skilled attendance, facility births)
+Plotted as markers only (not connected lines), since data points are irregularly spaced (5-13 years apart) and a connected line would misleadingly imply continuous trends between known points.
+- **Skilled birth attendance and facility births move almost identically together** at every observed time point — intuitive, since a skilled attendant is typically present specifically because a birth occurred in a facility.
+- **Antenatal care coverage follows a distinct, separate trajectory** — it started higher in the 1990s (64%), *declined* independently through the 2000s (down to 47% by 2009), and by 2022 (66%) has fallen behind skilled attendance (89%) and facility births (88%), which caught up and surpassed it.
+- **Key insight:** getting mothers into antenatal care and getting them to deliver in a facility with skilled staff appear to be two distinct systemic challenges in Kenya, not one and the same — antenatal care coverage has not kept pace with the sharp gains made in facility delivery and skilled attendance, especially post-2014.
+
+---
+
+## Next steps (Stage 5 onward)
+Feature engineering (e.g. rate-of-change columns between survey years), correlation/statistical testing between the service coverage indicators, and a final Power BI dashboard.
