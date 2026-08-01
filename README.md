@@ -96,3 +96,32 @@ Plotted as markers only (not connected lines), since data points are irregularly
 
 ## Next steps (Stage 5 onward)
 Feature engineering (e.g. rate-of-change columns between survey years), correlation/statistical testing between the service coverage indicators, and a final Power BI dashboard.
+
+---
+
+## Stage 5: Feature Engineering
+Added annualized rate-of-change columns (value change per year between consecutive available observations) to make indicators on irregular timelines comparable, since raw values alone don't account for uneven gaps between survey years (5-13 years apart).
+
+Key finding: antenatal care's annualized rate of change collapsed to +0.5/year by 2022, while skilled attendance (+3.18/year) and facility births (+3.48/year) sustained the pace they picked up during the 2014-2016 surge — a sharper, quantified version of the divergence seen in Stage 4.
+
+## Stage 6: Analysis
+Ran Pearson correlation tests between the three service-coverage indicators, both on raw values and on annualized rate of change (n=4 complete year-pairs in both cases — small sample, results directionally suggestive rather than statistically robust).
+
+- Skilled attendance vs. facility births: r=1.000 (raw), r=0.999 (rate of change) — near-perfect, confirms these two move together at every observed point.
+- Antenatal care vs. the other two: r≈0.95 in both raw and rate-of-change forms — surprisingly, antenatal care's rate of change *does* move in the same direction as the other two at every point (declining together in 2003, near-zero together in 2009, peaking together in 2014).
+- **Refined interpretation**: antenatal care isn't disconnected from the same underlying drivers — it responds to them, just far more weakly. The gap in magnitude has grown over time: in 2003 antenatal care was declining *faster* than the other two; by 2022 it was improving 6-7x *slower*.
+
+## Stage 7: Interpretation
+
+Kenya's maternal and reproductive health indicators show a story of uneven progress rather than steady, uniform improvement. Facility-based delivery and skilled birth attendance — two indicators that move almost in lockstep — saw a dramatic turnaround starting around 2014, roughly doubling from ~42-44% to ~88-89% by 2022. This timing loosely aligns with Kenya's 2013 free maternity care policy and the devolution of health services to county governments, though this dataset alone cannot confirm causation.
+
+Antenatal care coverage tells a more complicated story. It started the highest of the three indicators in the 1990s (64%), *declined* through the 2000s, and only began recovering after 2009. It briefly matched the other indicators' pace of improvement around 2014-2015, but its momentum then collapsed — by 2022 it was improving roughly 6-7 times slower than skilled attendance and facility births. This suggests that whatever drove Kenya's post-2014 health system gains reached facility-based delivery more effectively than it reached antenatal care access — a distinction worth investigating further, since antenatal visits are typically the entry point where risks are caught early, before delivery.
+
+Anaemia prevalence among reproductive-age women followed a separate, concerning U-shaped trend: steady improvement from 2000-2011, followed by a reversal that has continued through 2023, nearly erasing over a decade of progress for non-pregnant women specifically. Pregnant women remain consistently 10-13 percentage points more anaemic than non-pregnant women throughout the entire period — a persistent, unclosed gap.
+
+**Limitations:** several indicators (especially caesarean section rate, with only 1 data point) had too little data for meaningful trend analysis. Correlation results, while directionally consistent, are based on as few as 4 complete year-pairs and should be read as suggestive rather than statistically confirmed. Two indicators (adolescent birth rate, anaemia prevalence) required inferred sub-group splitting due to WHO's data export bundling multiple populations under single indicator codes — a documented judgment call, not a confirmed distinction from the source.
+
+---
+
+## Next steps (Stage 8 onward)
+Power BI dashboard build, and final push to GitHub with LinkedIn/GitHub profile updates referencing this project.
