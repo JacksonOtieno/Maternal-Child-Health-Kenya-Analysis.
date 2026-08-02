@@ -5,7 +5,7 @@ This project analyzes trends in Kenya's maternal and reproductive health indicat
 
 **Core question:** How have Kenya's key maternal and reproductive health indicators changed between 1993 and 2023, and which areas show the strongest vs. weakest progress? *(Secondary angle: do improvements in one indicator, e.g. antenatal care coverage, track alongside improvements in another, e.g. facility births?)*
 
-**Tools used:** Python (Pandas, Matplotlib/Seaborn), SQL, Power BI
+**Tools used:** Python (Pandas, Matplotlib/Seaborn),Power BI
 
 ---
 
