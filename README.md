@@ -123,5 +123,19 @@ Anaemia prevalence among reproductive-age women followed a separate, concerning 
 
 ---
 
-## Next steps (Stage 8 onward)
-Power BI dashboard build, and final push to GitHub with LinkedIn/GitHub profile updates referencing this project.
+
+## Stage 8: Power BI Dashboard
+
+Built an interactive dashboard in Power BI Desktop visualizing the core findings from Stages 4–7.
+
+**Data connection:** Rather than uploading a local file (which hit licensing/UI friction in Power BI Service), the processed dataset (`data/processed/df_kenya_maternal_health_clean.csv`) is pulled directly from its GitHub raw URL using Power BI's **Get Data → Web** connector. This means the dashboard reflects whatever is currently pushed to `data/processed/`  no manual re-upload needed if the data is updated.
+
+**Visuals included:**
+- **Line chart** — Antenatal care coverage vs. skilled birth attendance vs. facility births over time, showing the ~2014 crossover where skilled attendance and facility births overtake antenatal care coverage.
+- **Line chart** — Anaemia prevalence (split by sub-population), showing the U-shaped trend: improvement to ~2011, then reversal.
+- **Scatter plot** — Skilled attendance vs. facility births, one point per year with paired data (n=4, consistent with the Stage 6 correlation analysis), with a trend line showing the near-linear relationship.
+- **Summary cards** — Latest (2022) facility births rate and antenatal care coverage rate, for a quick side-by-side comparison.
+
+**Note on the scatter plot:** built from a separate, pivoted (wide-format) version of the dataset, since Power BI's scatter visual requires two indicators as separate columns rather than the long/tidy format used elsewhere. This pivot is done in Power Query and only affects this one visual  the rest of the dashboard uses the original long-format table.
+
+Files: [`dashboard/kenya_maternal_health_dashboard.pbix`](dashboard/kenya_maternal_health_dashboard.pbix) (requires Power BI Desktop to open) and [`dashboard/kenya_maternal_health_dashboard.pdf`](dashboard/kenya_maternal_health_dashboard.pdf) (static export, viewable by anyone).
