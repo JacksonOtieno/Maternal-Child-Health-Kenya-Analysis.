@@ -20,8 +20,9 @@ over time (r≈1.0) and have overtaken antenatal care coverage since ~2014 — a
 care improved 6–7x more slowly over the same period. Anaemia prevalence shows a 
 U-shaped trend: improving until ~2011, then reversing.
 
-**Dashboard:** [Interactive Power BI dashboard](dashboard/kenya_maternal_health_dashboard.pbix) 
-(requires Power BI Desktop) or [static PDF version](dashboard/kenya_maternal_health_dashboard.pdf)
+Dashboard: [Interactive Power BI dashboard](.../kenya_maternal_health_dashboard.pbix) 
+(requires Power BI Desktop — GitHub will prompt a download) or 
+[static PDF version](.../kenya_maternal_health_dashboard.pdf)
 
 **Data source:** [WHO maternal/reproductive health indicators for Kenya, via HDX](https://data.humdata.org/dataset/who-data-for-ken)
 ---
