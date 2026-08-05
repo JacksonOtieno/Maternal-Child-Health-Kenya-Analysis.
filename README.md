@@ -1,12 +1,29 @@
 # Maternal & Child Health Analysis — Kenya
 
 ## Project Overview
-This project analyzes trends in Kenya's maternal and reproductive health indicators using WHO data, exploring how key outcomes have changed over time and where progress has been strongest or weakest.
+Maternal & Child Health Analysis — Kenya
 
-**Core question:** How have Kenya's key maternal and reproductive health indicators changed between 1993 and 2023, and which areas show the strongest vs. weakest progress? *(Secondary angle: do improvements in one indicator, e.g. antenatal care coverage, track alongside improvements in another, e.g. facility births?)*
+## Project Overview
+This project analyzes trends in Kenya's maternal and reproductive health indicators 
+using WHO data, exploring how key outcomes have changed over time and where progress 
+has been strongest or weakest.
 
-**Tools used:** Python (Pandas, Matplotlib/Seaborn),Power BI
+Core question: How have Kenya's key maternal and reproductive health indicators changed 
+between 1993 and 2023, and which areas show the strongest vs. weakest progress? 
+(Secondary angle: do improvements in one indicator, e.g. antenatal care coverage, 
+track alongside improvements in another, e.g. facility births?)
 
+Tools used: Python (Pandas, Matplotlib/Seaborn), Power BI
+
+**Key finding:** Skilled birth attendance and facility births track almost identically 
+over time (r≈1.0) and have overtaken antenatal care coverage since ~2014 — antenatal 
+care improved 6–7x more slowly over the same period. Anaemia prevalence shows a 
+U-shaped trend: improving until ~2011, then reversing.
+
+**Dashboard:** [Interactive Power BI dashboard](dashboard/kenya_maternal_health_dashboard.pbix) 
+(requires Power BI Desktop) or [static PDF version](dashboard/kenya_maternal_health_dashboard.pdf)
+
+**Data source:** [WHO maternal/reproductive health indicators for Kenya, via HDX](https://data.humdata.org/dataset/who-data-for-ken)
 ---
 
 ## Stage 1: Problem Framing
